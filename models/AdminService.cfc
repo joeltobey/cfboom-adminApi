@@ -24,13 +24,22 @@ component
     output="false"
 { 
     property name="coldbox" inject="coldbox";
+    property name="wirebox" inject="wirebox";
  
     public cfboom.adminapi.models.AdminService function init() {
         return this;
     }
 
+    /**
+     * Factory method to get the appropriate Administrator.
+     */
     public cfboom.adminapi.models.Administrator function getAdministrator() {
-        writeDump(coldbox);abort;
-        //var util = controller.getUtil();
+        if (coldbox.getCFMLEngine().getEngine() == "ADOBE") {
+            return wirebox.getInstance("AdobeAdministrator@cfboomAdminApi");
+        } else if (coldbox.getCFMLEngine().getEngine() == "RAILO") {
+            return wirebox.getInstance("LuceeAdministrator@cfboomAdminApi");
+        } {
+            return wirebox.getInstance("LuceeAdministrator@cfboomAdminApi");
+        }
     }
 }

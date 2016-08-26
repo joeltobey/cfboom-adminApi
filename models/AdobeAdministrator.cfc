@@ -16,21 +16,23 @@
 
 /**
  * A concrete implementation of an Administrator for the Adobe ColdFusion server.
+ *
+ * @singleton
  */
 component
     implements="cfboom.adminapi.models.Administrator"
-    displayname="Class AcfAdministrator"
+    displayname="Class AdobeAdministrator"
     output="false"
 {
     /**
      * @password.inject coldbox:setting:adminPassword@cfboom-adminApi
      */
-    public cfboom.adminapi.models.AcfAdministrator function init(required string password) {
+    public cfboom.adminapi.models.AdobeAdministrator function init(required string password) {
         variables['_password'] = arguments.password;
         return this;
     }
 
-    public array function getDatasources() {
+    public struct function getDatasources() {
         login();
         var datasource = new cfide.adminapi.datasource();
         return datasource.getdatasources();

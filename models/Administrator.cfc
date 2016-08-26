@@ -20,5 +20,5 @@
 interface
     displayname="Interface Administrator"
 {
-    public array function getDatasources();
+    public struct function getDatasources();
 }

@@ -76,8 +76,9 @@ component {
         interceptors = [];
 
         // Binder Mappings
-        // binder.map("Alias").to("#moduleMapping#.model.MyService");
         binder.map("AdminService@cfboomAdminApi").to("cfboom.adminapi.models.AdminService");
+        binder.map("AdobeAdministrator@cfboomAdminApi").to("cfboom.adminapi.models.AdobeAdministrator");
+        binder.map("LuceeAdministrator@cfboomAdminApi").to("cfboom.adminapi.models.LuceeAdministrator");
 
     }
 
