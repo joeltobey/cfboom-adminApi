@@ -32,6 +32,7 @@ component
         return this;
     }
 
+    public struct function getDatasources() {
         login();
         var datasource = new cfide.adminapi.datasource();
         return datasource.getdatasources();
