@@ -33,18 +33,24 @@ component
     }
 
     public struct function getDatasources() {
+        var datasources = {};
         var dsnQuery = "";
         admin action="getDatasources" password="#_password#" returnVariable="dsnQuery";
         for (var dsn in dsnQuery) {
             datasources[dsn.name] = dsn;
         }
+        return datasources;
     }
 
     public struct function getDatasource(required string name) {
+        var result = "";
         admin action="getDatasource" name="#arguments.name#" password="#_password#" returnVariable="result";
+        return result;
     }
 
     public any function verifyDsn(required string name) {
+        var result = "";
         admin action="verifyDatasource" name="#arguments.name#" password="#_password#" dbusername="" dbpassword="" returnVariable="result";
+        return result;
     }
 }
