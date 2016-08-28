@@ -17,12 +17,23 @@
 /**
  * A simple contract to the ColdFusion administrator regardless of server.
  */
-interface
-    displayname="Interface Administrator"
+component
+    extends="coldbox.system.testing.BaseTestCase"
+    appMapping="/root"
+    displayname="Class AdminServiceTest"
+    output="false"
 {
-    public struct function getDatasources();
+    public void function beforeTests() {
+        super.beforeTests();
+        variables['AdminService'] = getInstance("AdminService@cfboomAdminApi");
+        variables['_admin'] = AdminService.getAdministrator();
+    }
 
-    public struct function getDatasource(required string name);
-
-    public any function verifyDsn(required string name);
+    public void function testDatasource() {
+        var datasources = _admin.getDatasources();
+        assertTrue(isStruct(_admin.getDatasources()));
+        for (var datasource in datasources) {
+            assertTrue(isStruct(_admin.getDatasource( datasource )));
+        }
+    }
 }

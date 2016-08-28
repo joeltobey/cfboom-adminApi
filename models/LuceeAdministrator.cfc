@@ -33,12 +33,18 @@ component
     }
 
     public struct function getDatasources() {
-        login();
-        var datasource = new cfide.adminapi.datasource();
-        return datasource.getdatasources();
+        var dsnQuery = "";
+        admin action="getDatasources" password="#_password#" returnVariable="dsnQuery";
+        for (var dsn in dsnQuery) {
+            datasources[dsn.name] = dsn;
+        }
     }
 
-    private void function login() {
-        variables['_administrator'] = new cfide.adminapi.administrator().login( _password );
+    public struct function getDatasource(required string name) {
+        admin action="getDatasource" name="#arguments.name#" password="#_password#" returnVariable="result";
+    }
+
+    public any function verifyDsn(required string name) {
+        admin action="verifyDatasource" name="#arguments.name#" password="#_password#" dbusername="" dbpassword="" returnVariable="result";
     }
 }

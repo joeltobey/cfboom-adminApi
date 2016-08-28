@@ -38,6 +38,18 @@ component
         return datasource.getdatasources();
     }
 
+    public struct function getDatasource(required string name) {
+        login();
+        var datasource = new cfide.adminapi.datasource();
+        return datasource.getdatasources( arguments.name );
+    }
+
+    public any function verifyDsn(required string name) {
+        login();
+        var datasource = new cfide.adminapi.datasource();
+        return datasource.verifyDsn( arguments.name );
+    }
+
     private void function login() {
         variables['_administrator'] = new cfide.adminapi.administrator().login( _password );
     }
