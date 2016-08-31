@@ -20,7 +20,7 @@
 component {
 
     // Module Properties
-    this.title              = "<cfboom/> ColdFusion Admin API";
+    this.title              = "cfboom ColdFusion Admin API";
     this.author             = "Joel Tobey";
     this.webURL             = "https://github.com/joeltobey/cfboom-adminApi";
     this.description        = "A ColdBox Module to easily interface with ColdFusion's administrator API.";
