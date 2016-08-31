@@ -9,10 +9,8 @@ env:
     - BUILD_PLACEHOLDER="@build.number@"
 
 before_install:
-  - sudo gpg --keyserver keys.gnupg.net --recv-key 6DA70622
-  - sudo gpg -a --export 6DA70622 | sudo apt-key add -
+  - sudo apt-key adv --keyserver keys.gnupg.net --recv 6DA70622
   - sudo echo "deb http://downloads.ortussolutions.com/debs/noarch /" | sudo tee -a /etc/apt/sources.list.d/commandbox.list
-  - sudo apt-get update && sudo apt-get install commandbox
   #Commandbox setup
   - box coldbox create app
   - box install testbox
