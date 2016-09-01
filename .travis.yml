@@ -12,7 +12,10 @@ before_install:
   - sudo apt-key adv --keyserver keys.gnupg.net --recv 6DA70622
   - sudo echo "deb http://downloads.ortussolutions.com/debs/noarch /" | sudo tee -a /etc/apt/sources.list.d/commandbox.list
   - sudo apt-get update && sudo apt-get install commandbox
-  - mkdir modules/cfboom-adminApi/
+  - mkdir modules
+  - cd modules/
+  - mkdir cfboom-adminApi
+  - cd ..
   - mv tests/ modules/cfboom-adminApi/
   - mv model/ modules/cfboom-adminApi/
   - mv apidocs/  modules/cfboom-adminApi/
