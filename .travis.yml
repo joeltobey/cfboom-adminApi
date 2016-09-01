@@ -23,17 +23,11 @@ before_install:
   - mv LICENSE modules/cfboom-adminApi/
   - mv ModuleConfig.cfc modules/cfboom-adminApi/
   - mv README.md modules/cfboom-adminApi/
-  - ls
-  - cd modules/cfboom-adminApi/
-  - ls
-  - cd ..
-  - cd ..
 
 install:
   #Commandbox setup
   - box coldbox create app
   - box install testbox
-  - cd modules/
   - box server start port=45123 rewritesEnable=true openBrowser=false
 
 before_script:
