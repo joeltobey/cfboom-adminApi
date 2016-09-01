@@ -12,16 +12,25 @@ before_install:
   - sudo apt-key adv --keyserver keys.gnupg.net --recv 6DA70622
   - sudo echo "deb http://downloads.ortussolutions.com/debs/noarch /" | sudo tee -a /etc/apt/sources.list.d/commandbox.list
   - sudo apt-get update && sudo apt-get install commandbox
+  - mkdir modules/cfboom-adminApi/
+  - mv tests/ modules/cfboom-adminApi/
+  - mv model/ modules/cfboom-adminApi/
+  - mv apidocs/  modules/cfboom-adminApi/
+  - mv box.json modules/cfboom-adminApi/
+  - mv LICENSE modules/cfboom-adminApi/
+  - mv ModuleConfig.cfc modules/cfboom-adminApi/
+  - mv README.md modules/cfboom-adminApi/
+  - ls
+  - cd modules/cfboom-adminApi/
+  - ls
+  - cd ..
+  - cd ..
+
+install:
   #Commandbox setup
   - box coldbox create app
   - box install testbox
   - cd modules/
-  - sudo mkdir cfboom-adminApi
-  - cd cfboom-adminApi/
-
-install:
-  - cd ..
-  - cd ..
   - box server start port=45123 rewritesEnable=true openBrowser=false
 
 before_script:
