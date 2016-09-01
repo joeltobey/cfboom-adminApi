@@ -17,7 +17,7 @@ before_install:
   - mkdir cfboom-adminApi
   - cd ..
   - mv tests/ modules/cfboom-adminApi/
-  - mv model/ modules/cfboom-adminApi/
+  - mv models/ modules/cfboom-adminApi/
   - mv apidocs/  modules/cfboom-adminApi/
   - mv box.json modules/cfboom-adminApi/
   - mv LICENSE modules/cfboom-adminApi/
