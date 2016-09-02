@@ -33,7 +33,7 @@ install:
 
 before_script:
   - curl http://localhost:45123/
-  - curl -X POST -F new_password=${cfAdminPassword} -F new_password_re=${cfAdminPassword} http://localhost:51228/lucee/admin/web.cfm
+  - curl -X POST -F new_password=${cfAdminPassword} -F new_password_re=${cfAdminPassword} http://localhost:45123/lucee/admin/web.cfm
 
 script: > 
     testResults="echo $(box testbox run runner=http://localhost:45123/modules/cfboom-adminApi/tests/runner.cfm)";
