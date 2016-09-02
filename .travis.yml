@@ -7,7 +7,6 @@ env:
     - RELEASE_VERSION="1.0.0"
     - RELEASE_PLACEHOLDER="@release.number@"
     - BUILD_PLACEHOLDER="@build.number@"
-    - cfAdminPassword="J5H$IsmsWk26"
 
 before_install:
   - sudo apt-key adv --keyserver keys.gnupg.net --recv 6DA70622
@@ -29,11 +28,11 @@ install:
   #Commandbox setup
   - box coldbox create app
   - box install testbox
-  - box server start port=45123 rewritesEnable=true openBrowser=false JVMArgs="-DcfAdminPassword\=${cfAdminPassword}"
+  - box server start port=45123 rewritesEnable=true openBrowser=false JVMArgs="-DcfAdminPassword\=J5H$IsmsWk26"
 
 before_script:
   - curl http://localhost:45123/
-  - curl -X POST -F new_password=${cfAdminPassword} -F new_password_re=${cfAdminPassword} http://localhost:45123/lucee/admin/web.cfm
+  - curl -X POST -F new_password=J5H$IsmsWk26 -F new_password_re=J5H$IsmsWk26 http://localhost:45123/lucee/admin/web.cfm
 
 script: > 
     testResults="echo $(box testbox run runner=http://localhost:45123/modules/cfboom-adminApi/tests/runner.cfm)";
