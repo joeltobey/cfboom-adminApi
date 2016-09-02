@@ -104,6 +104,12 @@ component {
 
         // Merge parent settings with module settings
         structAppend( moduleSettings, parentSettings, true );
+
+        var properties = createObject("java", "java.lang.System").getProperties();
+        if (structKeyExists(properties, "cfAdminPassword")) {
+            moduleSettings['adminPassword'] = properties.getProperty("cfAdminPassword");
+            log.info("Setting 'adminPassword' from Java environment settings");
+        }
     }
 
 }
