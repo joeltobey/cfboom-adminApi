@@ -28,7 +28,7 @@ install:
   #Commandbox setup
   - box coldbox create app
   - box install testbox
-  - box server start port=45123 rewritesEnable=true openBrowser=false JVMArgs="-DcfAdminPassword\=J5H$IsmsWk26"
+  - box server start port=45123 rewritesEnable=true JVMArgs="-DcfAdminPassword\=J5H$IsmsWk26" openBrowser=false
 
 before_script:
   - curl http://localhost:45123/
