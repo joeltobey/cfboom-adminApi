@@ -13,9 +13,7 @@ before_install:
   - sudo echo "deb http://downloads.ortussolutions.com/debs/noarch /" | sudo tee -a /etc/apt/sources.list.d/commandbox.list
   - sudo apt-get update && sudo apt-get install commandbox
   - mkdir modules
-  - cd modules/
-  - mkdir cfboom-adminApi
-  - cd ..
+  - mkdir modules/cfboom-adminApi
   - mv tests/ modules/cfboom-adminApi/
   - mv models/ modules/cfboom-adminApi/
   - mv apidocs/  modules/cfboom-adminApi/
