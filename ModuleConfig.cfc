@@ -109,13 +109,17 @@ component {
         if (properties.containsKey("cfAdminPassword")) {
             moduleSettings['adminPassword'] = properties.get("cfAdminPassword");
             log.info("Setting 'adminPassword' from system environment");
+            throw("(1) password=[#moduleSettings.adminPassword#]");
         }
 
         properties = createObject("java", "java.lang.System").getProperties();
         if (!isNull(properties.getProperty("cfAdminPassword"))) {
             moduleSettings['adminPassword'] = properties.getProperty("cfAdminPassword");
             log.info("Setting 'adminPassword' from Java system settings");
+            throw("(2) password=[#moduleSettings.adminPassword#]");
         }
+
+        throw("(3) password=[#moduleSettings.adminPassword#]");
     }
 
 }
