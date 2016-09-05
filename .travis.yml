@@ -24,6 +24,7 @@ before_install:
 
 install:
   #Commandbox setup
+  - box install coldbox
   - box coldbox create app
   - box install testbox
   - box server start port=45123 rewritesEnable=true JVMArgs="-DcfAdminPassword=J5H$IsmsWk26" openBrowser=false
