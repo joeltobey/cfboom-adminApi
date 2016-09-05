@@ -25,6 +25,6 @@ You must set the admin password in your `ColdBox.cfc` file under a `cfboomAdminA
 ```js
 cfboomAdminApi = {
     // ColdFusion Admin password
-	adminPassword = "Password123"
+    adminPassword = "Password123"
 };
 ```

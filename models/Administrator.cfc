@@ -20,9 +20,18 @@
 interface
     displayname="Interface Administrator"
 {
+    /**
+     * Returns a struct of registered datasources
+     */
     public struct function getDatasources();
 
+    /**
+     * Returns the named datasource
+     */
     public struct function getDatasource(required string name);
 
+    /**
+     * Verifies the named datasource
+     */
     public any function verifyDsn(required string name);
 }
