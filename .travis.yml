@@ -23,7 +23,6 @@ before_install:
   - mv README.md modules/cfboom-adminApi/
 
 install:
-  #Commandbox setup
   - box install coldbox
   - box coldbox create app
   - box install testbox
