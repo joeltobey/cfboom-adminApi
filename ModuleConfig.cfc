@@ -40,7 +40,7 @@ component {
     // Module Dependencies
     this.dependencies       = [];
 
-    function configure(){
+    function configure() {
 
         // module settings - stored in modules.name.settings
         settings = {
