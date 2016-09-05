@@ -42,38 +42,11 @@ component {
 
     function configure(){
 
-        // parent settings
-        parentSettings = {};
-
         // module settings - stored in modules.name.settings
         settings = {
         	// ColdFusion Admin password
         	"adminPassword" = ""
         };
-
-        // Layout Settings
-        layoutSettings = {
-            defaultLayout = ""
-        };
-
-        // datasources
-        datasources = {};
-
-        // SES Routes
-        routes = [
-            // Module Entry Point
-            { pattern="/", handler="home", action="index" },
-            // Convention Route
-            { pattern="/:handler/:action?" }
-        ];
-
-        // Custom Declared Points
-        interceptorSettings = {
-            customInterceptionPoints = ""
-        };
-
-        // Custom Declared Interceptors
-        interceptors = [];
 
         // Binder Mappings
         binder.map("AdminService@cfboomAdminApi").to("cfboom.adminapi.models.AdminService");
