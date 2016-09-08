@@ -7,7 +7,7 @@ A convenient service to access the ColdFusion Admin API.
 Apache License, Version 2.0.
 
 ##IMPORTANT LINKS
-- [https://github.com/joeltobey/cfboom-adminApi/wiki] https://github.com/joeltobey/cfboom-adminApi/wiki
+- https://github.com/joeltobey/cfboom-adminApi/wiki
 
 ##SYSTEM REQUIREMENTS
 - Lucee 4.5+
