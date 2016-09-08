@@ -14,7 +14,9 @@ Apache License, Version 2.0.
 - ColdFusion 9+
 
 # INSTRUCTIONS
-Just drop into your **modules** folder
+Just drop into your **modules** folder or use CommandBox to install
+
+`box install cfboom-adminApi`
 
 ## WireBox Mappings
 The module registers the AdminService: `AdminService@cfboomAdminApi` that you can use to interface with ColdFusion's Admin API. Check out the API Docs for all the possible functions.
