@@ -41,6 +41,12 @@ install:
   - box install testbox
   - box install testbox
   - box install testbox
+  # install cfboom-lang 5x to ensure no time outs. It skips if cfboom-lang is already installed.
+  - box install cfboom-lang
+  - box install cfboom-lang
+  - box install cfboom-lang
+  - box install cfboom-lang
+  - box install cfboom-lang
   - box server start port=45123 rewritesEnable=true JVMArgs="-DcfAdminPassword=J5HIsmsWk26" openBrowser=false
 
 before_script:
