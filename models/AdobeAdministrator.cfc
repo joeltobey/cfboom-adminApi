@@ -42,10 +42,14 @@ component
     public struct function getDatasource(required string name) {
         login();
         var datasource = new cfide.adminapi.datasource();
-        return datasource.getdatasources( arguments.name );
+        try {
+            return datasource.getdatasources( arguments.name );
+        } catch (Expression ex) {
+            return {};
+        }
     }
 
-    public any function verifyDsn(required string name) {
+    public boolean function verifyDatasource(required string name) {
         login();
         var datasource = new cfide.adminapi.datasource();
         return datasource.verifyDsn( arguments.name );

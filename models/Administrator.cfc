@@ -33,5 +33,5 @@ interface
     /**
      * Verifies the named datasource
      */
-    public any function verifyDsn(required string name);
+    public boolean function verifyDatasource(required string name);
 }

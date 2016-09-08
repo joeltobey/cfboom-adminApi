@@ -378,6 +378,61 @@ Class
 			<code>any</code>
 		</td>
 		<td>
+			<strong><a href="AdminService.html#log()">log</A></strong> 
+			<br>
+			
+			<br><br>
+			<ul>
+			
+				
+			
+				
+				<li class="label label-default label-annotations">access = public</li>
+				
+			
+				
+			
+				
+			
+				
+				<li class="label label-default label-annotations">returntype = any</li>
+				
+			
+				
+				<li class="label label-default label-annotations">inject = logbox:logger:{this}</li>
+				
+			
+				
+			
+				
+			
+				
+			
+			</ul>
+
+		</td>
+		<td align="right" valign="top" width="1%">
+			
+		</td>
+		<td align="right" valign="top" width="1%">
+			<code>
+				true
+			</code>
+		</td>
+		<td align="right" valign="top" width="1%">
+			<code>
+				false
+			</code>
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>any</code>
+		</td>
+		<td>
 			<strong><a href="AdminService.html#wirebox()">wirebox</A></strong> 
 			<br>
 			
@@ -525,10 +580,10 @@ Class
 	
 	<tr>
 		<td align="right" valign="top" width="1%">
-			<code>any</code>
+			<code>boolean</code>
 		</td>
 		<td>
-			<strong><a href="AdminService.html#verifyDsn()">verifyDsn</A></strong>(string name)
+			<strong><a href="AdminService.html#verifyDatasource()">verifyDatasource</A></strong>(string name)
 			<br>
 			
 		</td>
@@ -729,6 +784,54 @@ Class
 		
 			
 			<dd><code>inject</code> - coldbox</dd>
+			
+		
+			
+		
+			
+		
+			
+			<dd><code>serializable</code> - true</dd>
+			
+		
+		</dl>
+
+		<hr>
+	
+		
+		<a name="log()"><!-- --></a>
+		<h3>log</h3>
+
+		<kbd>
+			property any 
+			<strong>log</strong>
+			
+		</kbd>
+
+		<br><br>
+		
+
+		<dl>
+		<dt><strong>Attributes:</strong></dt>
+		
+			
+		
+			
+			<dd><code>access</code> - public</dd>
+			
+		
+			
+			<dd><code>required</code> - false</dd>
+			
+		
+			
+		
+			
+			<dd><code>returntype</code> - any</dd>
+			
+		
+			
+			<dd><code>inject</code> - logbox:logger:{this}</dd>
 			
 		
 			
@@ -946,10 +1049,10 @@ Class
 	<hr>
 
 	
-	<a name="verifyDsn()"><!-- --></a>
-	<h3>verifyDsn</h3>
+	<a name="verifyDatasource()"><!-- --></a>
+	<h3>verifyDatasource</h3>
 	
-	<kbd>public any <strong>verifyDsn</strong>(string name)</kbd>
+	<kbd>public boolean <strong>verifyDatasource</strong>(string name)</kbd>
 	
 	<br><br>
 
@@ -962,7 +1065,7 @@ Class
 				<dt><strong>Specified by:</strong></dt>
 				<dd>
 				<code>
-				<a href="../../../cfboom/adminapi/models/Administrator.html#verifyDsn()">verifyDsn</a></code>
+				<a href="../../../cfboom/adminapi/models/Administrator.html#verifyDatasource()">verifyDatasource</a></code>
 				in interface
 				<code>
 					<a href="../../../cfboom/adminapi/models/Administrator.html" title="interface in cfboom.adminapi.models">Administrator</a>

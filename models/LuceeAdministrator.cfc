@@ -44,14 +44,19 @@ component
     }
 
     public struct function getDatasource(required string name) {
-        var result = "";
-        admin action="getDatasource" name="#arguments.name#" password="#_password#" returnVariable="result";
-        return result;
+        try {
+            var result = "";
+            admin action="getDatasource" name="#arguments.name#" password="#_password#" returnVariable="result";
+            return result;
+        } catch (Application ex) {
+            return {};
+        }
+        
     }
 
-    public any function verifyDsn(required string name) {
-        var result = "";
-        admin action="verifyDatasource" name="#arguments.name#" password="#_password#" dbusername="" dbpassword="" returnVariable="result";
-        return result;
+    public boolean function verifyDatasource(required string name) {
+        admin action="verifyDatasource" name="#arguments.name#" password="#_password#" dbusername="" dbpassword="";
+        // Throws exception if not valid so we return true
+        return true;
     }
 }
