@@ -20,6 +20,8 @@
  * @singleton
  */
 component
+    extends="cfboom.lang.Object"
+    implements="cfboom.adminapi.models.Administrator"
     displayname="Class AdminService"
     output="false"
 { 
@@ -30,16 +32,32 @@ component
         return this;
     }
 
+    public void function onDIComplete() {
+        initAdministrator();
+    }
+
+    public struct function getDatasources() {
+        return _instance.administrator.getDatasources();
+    }
+
+    public struct function getDatasource(required string name) {
+        return _instance.administrator.getDatasource( arguments.name );
+    }
+
+    public any function verifyDsn(required string name) {
+        return _instance.administrator.verifyDsn( arguments.name );
+    }
+
     /**
      * Factory method to get the appropriate Administrator.
      */
-    public cfboom.adminapi.models.Administrator function getAdministrator() {
+    private void function initAdministrator() {
         if (coldbox.getCFMLEngine().getEngine() == "ADOBE") {
-            return wirebox.getInstance("AdobeAdministrator@cfboomAdminApi");
+            _instance['administrator'] = wirebox.getInstance("AdobeAdministrator@cfboomAdminApi");
         } else if (coldbox.getCFMLEngine().getEngine() == "RAILO") {
-            return wirebox.getInstance("LuceeAdministrator@cfboomAdminApi");
-        } {
-            return wirebox.getInstance("LuceeAdministrator@cfboomAdminApi");
+            _instance['administrator'] = wirebox.getInstance("LuceeAdministrator@cfboomAdminApi");
+        } else {
+            _instance['administrator'] = wirebox.getInstance("LuceeAdministrator@cfboomAdminApi");
         }
     }
 }

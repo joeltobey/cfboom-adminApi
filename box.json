@@ -10,6 +10,7 @@
         "type":"git",
         "url":"https://github.com/joeltobey/cfboom-adminApi"
     },
+    "location": "https://github.com/joeltobey/cfboom-adminApi/releases/download/v1.0.0/cfboom-adminApi-v1.0.0.zip",
     "shortDescription":"A ColdBox Module to easily interface with ColdFusion's administrator API.",
     "license":[
         {
@@ -30,6 +31,9 @@
             "version":">9.02"
         }
     ],
+    "dependencies":{
+        "cfboom-lang":"1.0.0"
+    },
     "ignore":[
         "**/.*",
         "tests",

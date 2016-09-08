@@ -144,15 +144,36 @@ Class
 	
 	
 
+	
+		
+		
+			
+		
+	
+	
+
 
 <!-- Inheritance Tree-->
 <pre style="background:white">lucee.Component
-    <img src="../../../resources/inherit.gif" alt="extended by ">cfboom.adminapi.models.AdminService
+    <img src="../../../resources/inherit.gif" alt="extended by ">cfboom.lang.Object
+      <img src="../../../resources/inherit.gif" alt="extended by ">cfboom.adminapi.models.AdminService
 </pre>
 
 
 
 	
+	
+		<div class="panel panel-default">
+			<div class="panel-heading"><strong>All Implemented Interfaces:</strong></div>
+  			<div class="panel-body">
+			
+			
+				
+				
+				<a href="../../../cfboom/adminapi/models/Administrator.html" title="interface in cfboom.adminapi.models">Administrator</a>
+			
+			</div>
+		</div>
 	
 
 
@@ -220,6 +241,8 @@ Class
 				
 			</li>
 			&nbsp;
+			
+		
 			
 		
 			
@@ -448,13 +471,65 @@ Class
 	
 	<tr>
 		<td align="right" valign="top" width="1%">
-			<code><a href="../../../cfboom/adminapi/models/Administrator.html" title="interface in cfboom.adminapi.models">Administrator</a></code>
+			<code>struct</code>
 		</td>
 		<td>
-			<strong><a href="AdminService.html#getAdministrator()">getAdministrator</A></strong>()
+			<strong><a href="AdminService.html#getDatasource()">getDatasource</A></strong>(string name)
+			<br>
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>struct</code>
+		</td>
+		<td>
+			<strong><a href="AdminService.html#getDatasources()">getDatasources</A></strong>()
+			<br>
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>private&nbsp;void</code>
+		</td>
+		<td>
+			<strong><a href="AdminService.html#initAdministrator()">initAdministrator</A></strong>()
 			<br>
 			
 			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Factory method to get the appropriate Administrator.
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>void</code>
+		</td>
+		<td>
+			<strong><a href="AdminService.html#onDIComplete()">onDIComplete</A></strong>()
+			<br>
+			
+		</td>
+	</tr>
+	
+	
+	
+	<tr>
+		<td align="right" valign="top" width="1%">
+			<code>any</code>
+		</td>
+		<td>
+			<strong><a href="AdminService.html#verifyDsn()">verifyDsn</A></strong>(string name)
+			<br>
 			
 		</td>
 	</tr>
@@ -465,6 +540,95 @@ Class
 
 <a name="inherited_methods"><!-- --></a>
 
+
+	
+
+	
+
+	&nbsp;
+	<a name="methods_inherited_from_class_cfboom.lang.Object"><!-- --></a>
+	<table class="table table-hover table-bordered">
+		<tr class="info">
+			<th align="left">
+				<strong>Methods inherited from class <kbd>cfboom.lang.Object</kbd></strong>
+			</th>
+		</tr>
+		<tr>
+			<td>
+				
+				
+				
+					
+					
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+					
+					
+				
+					
+					
+					
+						
+					
+					
+					
+					
+				
+				
+				
+					<a href="../../../cfboom/lang/Object.html#$equals()">$equals</a>, <a href="../../../cfboom/lang/Object.html#getComponentName()">getComponentName</a>, <a href="../../../cfboom/lang/Object.html#getIdentityHashCode()">getIdentityHashCode</a>, <a href="../../../cfboom/lang/Object.html#getIdentityString()">getIdentityString</a>, <a href="../../../cfboom/lang/Object.html#getMeta()">getMeta</a>, <a href="../../../cfboom/lang/Object.html#hashCode()">hashCode</a>, <a href="../../../cfboom/lang/Object.html#toString()">toString</a>
+				
+			</td>
+		</tr>
+	</table>
 
 	
 
@@ -649,10 +813,91 @@ Class
 
 
 	
-	<a name="getAdministrator()"><!-- --></a>
-	<h3>getAdministrator</h3>
+	<a name="getDatasource()"><!-- --></a>
+	<h3>getDatasource</h3>
 	
-	<kbd>public <a href="../../../cfboom/adminapi/models/Administrator.html" title="interface in cfboom.adminapi.models">Administrator</a> <strong>getAdministrator</strong>()</kbd>
+	<kbd>public struct <strong>getDatasource</strong>(string name)</kbd>
+	
+	<br><br>
+
+	
+
+	
+		
+		
+			<dl>
+				<dt><strong>Specified by:</strong></dt>
+				<dd>
+				<code>
+				<a href="../../../cfboom/adminapi/models/Administrator.html#getDatasource()">getDatasource</a></code>
+				in interface
+				<code>
+					<a href="../../../cfboom/adminapi/models/Administrator.html" title="interface in cfboom.adminapi.models">Administrator</a>
+				</code>
+				</dd>
+			</dl>
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>name</code></dd>
+		
+		</dl>
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="getDatasources()"><!-- --></a>
+	<h3>getDatasources</h3>
+	
+	<kbd>public struct <strong>getDatasources</strong>()</kbd>
+	
+	<br><br>
+
+	
+
+	
+		
+		
+			<dl>
+				<dt><strong>Specified by:</strong></dt>
+				<dd>
+				<code>
+				<a href="../../../cfboom/adminapi/models/Administrator.html#getDatasources()">getDatasources</a></code>
+				in interface
+				<code>
+					<a href="../../../cfboom/adminapi/models/Administrator.html" title="interface in cfboom.adminapi.models">Administrator</a>
+				</code>
+				</dd>
+			</dl>
+		
+	
+
+	
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="initAdministrator()"><!-- --></a>
+	<h3>initAdministrator</h3>
+	
+	<kbd>private void <strong>initAdministrator</strong>()</kbd>
 	
 	<br><br>
 
@@ -668,6 +913,75 @@ Class
 	
 	
 
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="onDIComplete()"><!-- --></a>
+	<h3>onDIComplete</h3>
+	
+	<kbd>public void <strong>onDIComplete</strong>()</kbd>
+	
+	<br><br>
+
+	
+
+	
+		
+		
+	
+
+	
+	
+
+	
+
+	
+
+	</dl>
+	<hr>
+
+	
+	<a name="verifyDsn()"><!-- --></a>
+	<h3>verifyDsn</h3>
+	
+	<kbd>public any <strong>verifyDsn</strong>(string name)</kbd>
+	
+	<br><br>
+
+	
+
+	
+		
+		
+			<dl>
+				<dt><strong>Specified by:</strong></dt>
+				<dd>
+				<code>
+				<a href="../../../cfboom/adminapi/models/Administrator.html#verifyDsn()">verifyDsn</a></code>
+				in interface
+				<code>
+					<a href="../../../cfboom/adminapi/models/Administrator.html" title="interface in cfboom.adminapi.models">Administrator</a>
+				</code>
+				</dd>
+			</dl>
+		
+	
+
+	
+	
+
+	
+		<dl>
+		<dt><strong>Parameters:</strong></dt>
+		
+		<dd><code>name</code></dd>
+		
+		</dl>
 	
 
 	

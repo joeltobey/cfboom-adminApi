@@ -20,6 +20,7 @@
  * @singleton
  */
 component
+    extends="cfboom.lang.Object"
     implements="cfboom.adminapi.models.Administrator"
     displayname="Class LuceeAdministrator"
     output="false"

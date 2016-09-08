@@ -23,14 +23,22 @@ before_install:
   - mv README.md modules/cfboom-adminApi/
 
 install:
+  # create app 5x to ensure no time outs
   - box coldbox create app
-  # double check in case coldbox failed to be installed
   - box coldbox create app
   - box coldbox create app
+  - box coldbox create app
+  - box coldbox create app
+  # install coldbox 5x to ensure no time outs. It skips if coldbox is already installed.
   - box install coldbox
   - box install coldbox
+  - box install coldbox
+  - box install coldbox
+  - box install coldbox
+  # install testbox 5x to ensure no time outs. It skips if testbox is already installed.
   - box install testbox
-  # double check in case testbox failed to be installed
+  - box install testbox
+  - box install testbox
   - box install testbox
   - box install testbox
   - box server start port=45123 rewritesEnable=true JVMArgs="-DcfAdminPassword=J5HIsmsWk26" openBrowser=false

@@ -26,14 +26,13 @@ component
     public void function beforeTests() {
         super.beforeTests();
         variables['AdminService'] = getInstance("AdminService@cfboomAdminApi");
-        variables['_admin'] = AdminService.getAdministrator();
     }
 
     public void function testDatasource() {
-        var datasources = _admin.getDatasources();
-        assertTrue(isStruct(_admin.getDatasources()));
+        var datasources = AdminService.getDatasources();
+        assertTrue(isStruct(AdminService.getDatasources()));
         for (var datasource in datasources) {
-            assertTrue(isStruct(_admin.getDatasource( datasource )));
+            assertTrue(isStruct(AdminService.getDatasource( datasource )));
         }
     }
 }
