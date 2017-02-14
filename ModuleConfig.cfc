@@ -44,8 +44,8 @@ component {
 
         // module settings - stored in modules.name.settings
         settings = {
-        	// ColdFusion Admin password
-        	"adminPassword" = ""
+            // ColdFusion Admin password
+            "adminPassword" = ""
         };
 
         // Binder Mappings
