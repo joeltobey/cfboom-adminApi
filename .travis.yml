@@ -4,7 +4,7 @@ dist: trusty
 
 env:
   global:
-    - RELEASE_VERSION="1.0.0"
+    - RELEASE_VERSION="1.1.0"
     - RELEASE_PLACEHOLDER="@release.number@"
     - BUILD_PLACEHOLDER="@build.number@"
 
@@ -23,29 +23,9 @@ before_install:
   - mv README.md modules/cfboom-adminApi/
 
 install:
-  # create app 5x to ensure no time outs
   - box coldbox create app
-  - box coldbox create app
-  - box coldbox create app
-  - box coldbox create app
-  - box coldbox create app
-  # install coldbox 5x to ensure no time outs. It skips if coldbox is already installed.
   - box install coldbox
-  - box install coldbox
-  - box install coldbox
-  - box install coldbox
-  - box install coldbox
-  # install testbox 5x to ensure no time outs. It skips if testbox is already installed.
   - box install testbox
-  - box install testbox
-  - box install testbox
-  - box install testbox
-  - box install testbox
-  # install cfboom-lang 5x to ensure no time outs. It skips if cfboom-lang is already installed.
-  - box install cfboom-lang
-  - box install cfboom-lang
-  - box install cfboom-lang
-  - box install cfboom-lang
   - box install cfboom-lang
   - box server start port=45123 rewritesEnable=true JVMArgs="-DcfAdminPassword=J5HIsmsWk26" openBrowser=false
 
@@ -53,7 +33,7 @@ before_script:
   - curl http://localhost:45123/
   - curl --data "new_password=J5HIsmsWk26&new_password_re=J5HIsmsWk26&lang=en&rememberMe=s&submit=submit" http://localhost:45123/lucee/admin/web.cfm
 
-script: > 
+script: >
     testResults="echo $(box testbox run runner=http://localhost:45123/modules/cfboom-adminApi/tests/runner.cfm)";
     echo "$testResults";
     if grep -i "\[Failures: [1-9][0-9]\?[0-9]\?\]\|\[Errors: [1-9][0-9]\?[0-9]\?\]\|<t[^>]*>\|<b[^>]*>" <<< $testResults;  then exit 1; fi
