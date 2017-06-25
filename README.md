@@ -22,11 +22,13 @@ Just drop into your **modules** folder or use CommandBox to install
 The module registers the AdminService: `AdminService@cfboomAdminApi` that you can use to interface with ColdFusion's Admin API. Check out the API Docs for all the possible functions.
 
 ## Settings
-You must set the admin password in your `ColdBox.cfc` file under a `cfboomAdminApi` struct:
+You must set the `adminPassword` in your `ColdBox.cfc` file under a `cfboomAdminApi` struct of `moduleSettings`:
 
 ```js
-cfboomAdminApi = {
+moduleSettings = {
+  cfboomAdminApi = {
     // ColdFusion Admin password
     adminPassword = "Password123"
+  }
 };
 ```

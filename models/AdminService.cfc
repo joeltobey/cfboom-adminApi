@@ -16,19 +16,17 @@
 
 /**
  * The main service
- *
- * @singleton
  */
-component
+component singleton
     extends="cfboom.lang.Object"
     implements="cfboom.adminapi.models.Administrator"
     displayname="Class AdminService"
     output="false"
-{ 
+{
     property name="coldbox" inject="coldbox";
     property name="wirebox" inject="wirebox";
     property name="log" inject="logbox:logger:{this}";
- 
+
     public cfboom.adminapi.models.AdminService function init() {
         return this;
     }
