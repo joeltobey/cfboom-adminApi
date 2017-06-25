@@ -59,30 +59,17 @@ component {
      * Fired when the module is registered and activated.
      */
     function onLoad(){
-    	// parse parent settings
-		parseParentSettings();
+      // Check if Admin Password is set in Java system settings
+      properties = createObject("java", "java.lang.System").getProperties();
+      if (!isNull(properties.getProperty("cfAdminPassword"))) {
+        moduleSettings['adminPassword'] = properties.getProperty("cfAdminPassword");
+        log.info("Setting 'adminPassword' from Java system settings");
+      }
     }
 
     /**
      * Fired when the module is unregistered and unloaded
      */
     function onUnload(){}
-
-    private function parseParentSettings() {
-        // Read parent application config
-        var oConfig         = controller.getSetting( "ColdBoxConfig" );
-        var parentSettings  = oConfig.getPropertyMixin( "cfboomAdminApi", "variables", {} );
-        var configStruct    = controller.getConfigSettings();
-        var moduleSettings  = configStruct.modules['cfboom-adminApi'].settings;
-
-        // Merge parent settings with module settings
-        structAppend( moduleSettings, parentSettings, true );
-
-        properties = createObject("java", "java.lang.System").getProperties();
-        if (!isNull(properties.getProperty("cfAdminPassword"))) {
-            moduleSettings['adminPassword'] = properties.getProperty("cfAdminPassword");
-            log.info("Setting 'adminPassword' from Java system settings");
-        }
-    }
 
 }
